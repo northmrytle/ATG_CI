@@ -72,7 +72,7 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
-            document.getElementById("scan").value=result.text;
+            document.getElementsByName("scan").Value = result.text;
             
             console.log(result);
             /*
