@@ -54,7 +54,7 @@ var app = {
     setings: function() {
         
         alert("settings clicked");
-    }
+    },
 
 
     scan: function() {
