@@ -72,18 +72,17 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
-            document.getElementById("scan").value = result.text;
-            
+           
 //            document.getElementById("scan").value = "1GNFK13509R163698";
             
             console.log(result);
             
-            var ref = window.open('http://www.google.com', '_blank', 'location=yes');
+            var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
                         
             //var ref = window.open('http://192.168.2.235/atg_ci/checkin.aspx?scan=' + result.text, '_blank', 'location=yes');
-//            ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-//            ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-//            ref.addEventListener('exit', function() { alert(event.type); });
+            ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+            ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+            ref.addEventListener('exit', function() { alert(event.type); });
             alert("past in app browser call");
                      
         }, function (error) { 
