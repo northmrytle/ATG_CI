@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "net.northmyrtle.NMAScanner"
         version   = "1.0.0">
-    <name>NMA Scanner</name>
+    <name>ATG Check-In</name>
 
     <description>
-        Scans barcodes.
+        Vehicle Check-In Barcode Scanner.
     </description>
 
     <author href="http://www.northmyrtle.net" email="support@northmyrtle.net">
