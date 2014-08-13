@@ -27,7 +27,7 @@
     </head>
     <body>
         <div class="app">
-            <h1>AutoTruckGroup</h1>
+            <h1>Auto Truck Group</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
@@ -35,14 +35,10 @@
             <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
             <!--<p><a href="#" class="topcoat-button" id="encode">ENCODE</a></p>-->
             <p id="info"></p>
-            <form>
-                <input type="text" name="scan">
+            <form action="http://192.168.2.235/atg_ci/checkin.aspx" method="get">
+                <input type="text" id="scan" name="scan">
                 <input type="submit" value="Next">
-                
             </form>
-            
-            
-            
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>

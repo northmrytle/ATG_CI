@@ -72,7 +72,7 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
-            document.getElementsByName("scan").Value = result.text;
+            document.getElementById("scan").value = result.text;
             
             console.log(result);
             /*
@@ -89,7 +89,7 @@ var app = {
     encode: function() {
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
+        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.google.com", function(success) {
             alert("encode success: " + success);
           }, function(fail) {
             alert("encoding failed: " + fail);
