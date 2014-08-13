@@ -37,11 +37,10 @@ var app = {
     // function, we must explicity call `app.receivedEvent(...);`
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        var ref = window.open('http://192.168.2.235/ATG_CI/', '_blank', 'location=yes');
-        
-        ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-        ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-        ref.addEventListener('exit', function() { alert(event.type); });
+//        var ref = window.open('http://192.168.2.235/ATG_CI/', '_blank', 'location=yes');
+//        ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+//        ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+//        ref.addEventListener('exit', function() { alert(event.type); });
     },
 
     // Update DOM on a Received Event
