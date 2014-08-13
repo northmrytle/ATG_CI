@@ -73,6 +73,7 @@ var app = {
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
             document.getElementById("scan").value = result.text;
+            document.getElementById("scan").value = "1GNFK13509R163698";
             
             console.log(result);
             /*
