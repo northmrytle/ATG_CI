@@ -84,7 +84,12 @@ var app = {
 
             var webAppUrl = "http://192.168.2.235/ATG_CI/Checkin.aspx?scan=" + result.text;
             var ref = window.open(webAppUrl, '_blank', 'location=yes');
-          
+            ref.addEventListener('loadstop', function(event) {        
+                if (event.url.match("mobile/close")) {
+                    ref.close();
+                }
+            });
+            
         }, function(error) {
             console.log("Scanning failed: ", error);
         });
