@@ -57,8 +57,8 @@ var app = {
 //                function(error) {alert("Error! " + JSON.stringify(error));}
 //                );
 //               
-//        document.getElementById("light").setAttribute('style', 'display:none');
-//        document.getElementById("fade").setAttribute('style', 'display:none');
+        document.getElementById("light").setAttribute('style', 'display:none');
+        document.getElementById("fade").setAttribute('style', 'display:none');
     },
         
     settings_save: function() {
