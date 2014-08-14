@@ -40,29 +40,28 @@ var app = {
         var scanText = document.getElementById("scantext").value;
         var webAppUrl = "http://192.168.2.235/ATG_CI/Checkin.aspx?scan=" + scanText;
         var ref = window.open(webAppUrl, '_blank', 'location=yes');
-        
     },
             
     settings: function() {
         document.getElementById("light").setAttribute('style', 'display:block');
         document.getElementById("fade").setAttribute('style', 'display:block');
                 
-//        var webAppUrl = window.applicationPreferences.get(
-//                "webAppUrl", 
-//                function(value) {alert("Value is " + value);}, 
-//                function(error) {alert("Error! " + JSON.stringify(error));}
-//                )
+        var webAppUrl = window.applicationPreferences.get(
+                "webAppUrl", 
+                function(value) {alert("Value is " + value);}, 
+                function(error) {alert("Error! " + JSON.stringify(error));}
+                )
     },
 
     settings_close: function(){
         
         var webAppUrl = document.getElementById("webAppUrl").value;
         
-//        window.applicationPreferences.set("webAppUrl", webAppUrl, 
-//                function() {alert("Successfully saved!");},
-//                function(error) {alert("Error! " + JSON.stringify(error));}
-//                );
-//               
+        window.applicationPreferences.set("webAppUrl", webAppUrl, 
+                function() {alert("Successfully saved!");},
+                function(error) {alert("Error! " + JSON.stringify(error));}
+                );
+               
         document.getElementById("light").setAttribute('style', 'display:none');
         document.getElementById("fade").setAttribute('style', 'display:none');
         
