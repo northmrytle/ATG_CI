@@ -28,9 +28,8 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('scan').addEventListener('click', this.scan, false);
-        document.getElementById('encode').addEventListener('click', this.encode, false);
         document.getElementById('settings').addEventListener('click', this.settings, false);
-    },
+      },
 
     // deviceready Event Handler
     //
@@ -53,9 +52,8 @@ var app = {
     },
 
     settings: function() {
-        
-        alert("settings clicked");
-        
+          alert("settings clicked");
+//        var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
     },
 
 
@@ -82,24 +80,11 @@ var app = {
             console.log(result);
             
 //            var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
-                        
 //            var ref = window.open('http://192.168.2.235/atg_ci/checkin.aspx?scan=' + result.text, '_blank', 'location=yes');
             
         }, function (error) { 
             console.log("Scanning failed: ", error); 
         } );
-    },
-
-    encode: function() {
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
-        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.google.com", function(success) {
-            alert("encode success: " + success);
-          }, function(fail) {
-            alert("encoding failed: " + fail);
-          }
-        );
-
     }
 
 };
