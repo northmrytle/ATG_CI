@@ -80,7 +80,7 @@ var app = {
 //            "Format: " + result.format + "\n" + 
 //            "Cancelled: " + result.cancelled);  
 
-            document.getElementById("info").innerHTML = result.text;
+//            document.getElementById("info").innerHTML = result.text;
 //            document.getElementById("scan").value = "1GNFK13509R163698";
 
             var ref = window.open('http://192.168.2.235/ATG_CI/Checkin.aspx?scan=' + result.text, '_blank', 'location=yes');
