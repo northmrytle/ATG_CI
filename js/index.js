@@ -52,7 +52,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    setings: function() {
+    settings: function() {
         
         alert("settings clicked");
     },
