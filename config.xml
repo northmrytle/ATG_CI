@@ -14,6 +14,7 @@
     </author>
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
+    <gap:plugin name="com.mobileapart.prefs" version="1.0.1337" />
    
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
