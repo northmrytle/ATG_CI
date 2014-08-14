@@ -1,21 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 var app = {
     // Application Constructor
     initialize: function() {
@@ -29,8 +11,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('scan').addEventListener('click', this.scan, false);
         document.getElementById('settings').addEventListener('click', this.settings, false);
-      },
-
+        document.getElementById('settings_close').addEventListener('click', this.settings_close, false);
+    },
     // deviceready Event Handler
     //
     // The scope of `this` is the event. In order to call the `receivedEvent`
@@ -38,7 +20,6 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -50,41 +31,77 @@ var app = {
 
         console.log('Received Event: ' + id);
     },
-
+    
     settings: function() {
-          alert("settings clicked");
-//        var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
+        document.getElementById("light").setAttribute('style', 'display:block');
+        document.getElementById("fade").setAttribute('style', 'display:block');
+        
+        alert("getting settings");
+        
+//        var webAppUrl = window.applicationPreferences.get(
+//                "webAppUrl", 
+//                function(value) {alert("Value is " + value);}, 
+//                function(error) {alert("Error! " + JSON.stringify(error));}
+//                )
     },
 
+    settings_close: function(){
+//        alert("settings_save");
+        
+        var webAppUrl = document.getElementById("webAppUrl").value;
+        
+        alert("saving " + webAppUrl);
 
+//        window.applicationPreferences.set("webAppUrl", webAppUrl, 
+//                function() {alert("Successfully saved!");},
+//                function(error) {alert("Error! " + JSON.stringify(error));}
+//                );
+//               
+//        document.getElementById("light").setAttribute('style', 'display:none');
+//        document.getElementById("fade").setAttribute('style', 'display:none');
+    },
+        
+    settings_save: function() {
+    
+        alert("settings_save");
+        
+//        var webAppUrl = document.getElementById("webappurl").value;
+//        alert("saving " + webAppUrl);
+        
+//        window.applicationPreferences.set("webAppUrl", webAppUrl, 
+//            function() {alert("Successfully saved!");},
+//            function(error) {alert("Error! " + JSON.stringify(error));}
+//            );
+    },      
+    
     scan: function() {
         console.log('scanning');
-        
+
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-        scanner.scan( function (result) { 
+        scanner.scan(function(result) {
 
 //            alert("We got a barcode\n" + 
 //            "Result: " + result.text + "\n" + 
 //            "Format: " + result.format + "\n" + 
 //            "Cancelled: " + result.cancelled);  
 
-           console.log("Scanner result: \n" +
-                "text: " + result.text + "\n" +
-                "format: " + result.format + "\n" +
-                "cancelled: " + result.cancelled + "\n");
+            console.log("Scanner result: \n" +
+                    "text: " + result.text + "\n" +
+                    "format: " + result.format + "\n" +
+                    "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
-           
+
 //            document.getElementById("scan").value = "1GNFK13509R163698";
-            
+
             console.log(result);
-            
+
 //            var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
 //            var ref = window.open('http://192.168.2.235/atg_ci/checkin.aspx?scan=' + result.text, '_blank', 'location=yes');
-            
-        }, function (error) { 
-            console.log("Scanning failed: ", error); 
-        } );
+
+        }, function(error) {
+            console.log("Scanning failed: ", error);
+        });
     }
 
 };

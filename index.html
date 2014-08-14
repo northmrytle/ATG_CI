@@ -15,9 +15,19 @@
             </div>
             <p><a href="#" id="scan">SCAN</a></p>
             <p id="info"></p>
-            <p><a href="#" id="settings">SETTINGS</a></p>
-            <div id="test"><img src="img/settings.png" alt="Scanner Settings"  width="20"/></div>
+            <!--<p><a href="#" id="settings">SETTINGS</a></p>-->
         </div>
+        
+        <div id="settings" class="footer"><img src="img/settings.png" alt="Settings"  width="50"/></div>
+        <div id="light" class="white_content">
+            <div>
+                <div id="settings_close" class="close"><img src="img/close.gif" alt="Close"  /></div>
+            </div>
+            <p>Web App URL</p>
+            <p><input id="webAppUrl" type="text"/></p>
+        </div>
+        <div id="fade" class="black_overlay"></div>
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
