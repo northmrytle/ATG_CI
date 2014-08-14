@@ -55,6 +55,7 @@ var app = {
     settings: function() {
         
         alert("settings clicked");
+        
     },
 
 
@@ -80,14 +81,10 @@ var app = {
             
             console.log(result);
             
-            var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
+//            var ref = window.open('http://www.google.com?q=' + result.text, '_blank', 'location=yes');
                         
 //            var ref = window.open('http://192.168.2.235/atg_ci/checkin.aspx?scan=' + result.text, '_blank', 'location=yes');
-//            ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-//            ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-//            ref.addEventListener('exit', function() { alert(event.type); });
-           
-                     
+            
         }, function (error) { 
             console.log("Scanning failed: ", error); 
         } );
