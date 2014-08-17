@@ -40,6 +40,9 @@ var app = {
         var scanText = document.getElementById("scantext").value;
         var webAppUrl = "http://192.168.2.235/ATG_CI/Checkin.aspx?scan=" + scanText;
         var ref = window.open(webAppUrl, '_blank', 'location=yes');
+        ref.addEventListener('loadstop', function(event) {        
+            if (event.url.match("mobile/close")) {
+                ref.close();}        
     },
             
 //    settings: function() {
