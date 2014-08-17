@@ -40,9 +40,14 @@ var app = {
         var scanText = document.getElementById("scantext").value;
         var webAppUrl = "http://192.168.2.235/ATG_CI/Checkin.aspx?scan=" + scanText;
         var ref = window.open(webAppUrl, '_blank', 'location=yes');
-        ref.addEventListener('loadstop', function(event) {        
-            if (event.url.match("mobile/close")) {
-                ref.close();}        
+
+        ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+        ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+        ref.addEventListener('exit', function() { alert(event.type); });
+         
+//        ref.addEventListener('loadstop', function(event) {        
+//            if (event.url.match("mobile/close")) {
+//                ref.close();}        
     },
             
 //    settings: function() {
